@@ -1,14 +1,13 @@
 {
-  "name": "electron-webpack-quick-start",
-  "version": "0.0.0",
+  "name": "demo",
+  "version": "0.0.6",
   "license": "MIT",
   "scripts": {
-    "dev": "electron-webpack dev",
-    "compile": "electron-webpack",
-    "dist": "yarn compile && electron-builder",
-    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
+    "pub": "cross-env AWS_ACCESS_KEY_ID=abcdefgh AWS_SECRET_ACCESS_KEY=abcdefgh electron-builder build -c.compression=store --win --config ./builder.config.js --publish always"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
+    "electron-updater": "^4.3.9",
     "source-map-support": "^0.5.16"
   },
   "devDependencies": {
